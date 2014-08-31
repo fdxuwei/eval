@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -I../
-LDFLAGS = -L../lib
+LDFLAGS = -L../
 LDLIBS = -leval
 EXEC = main
 all: ${EXEC}

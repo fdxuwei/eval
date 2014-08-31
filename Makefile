@@ -1,7 +1,7 @@
 CXX=g++
 CXXFLAGS=-DNDEBUG
 AR =ar
-LIBMISC = lib/libeval.a
+LIBMISC = libeval.a
 OBJS = eval.o operator_factory.o
      
 all : $(OBJS)
