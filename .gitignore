@@ -13,7 +13,18 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
+*.suo
+*.user
+*.ncb
+*.out
+*.o
+*.log
+*.a
+*.lib
+Debug
+Release
+core
+main
 # =========================
 # Operating System Files
 # =========================
