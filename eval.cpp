@@ -90,6 +90,12 @@ static bool read_operand(string::const_iterator &beg, const string::const_iterat
 	operand = 0;
 	bool dot = false;;
 	double rate = 1;
+	bool neg = false;
+	if((beg != end) && ((*beg) == '-'))
+	{
+		beg++;
+		neg = true;
+	}
 	while(beg != end)
 	{
 		char ch = *beg;
@@ -118,6 +124,8 @@ static bool read_operand(string::const_iterator &beg, const string::const_iterat
 		}
 		beg++;
 	}
+	if(neg)
+		operand *= -1;
 	return true;
 }
 /* read function */
@@ -145,10 +153,14 @@ static bool postexpr(const string &mexpr, list<optor*> &optors)
 	string::const_iterator it = mexpr.begin();
 	double operand;
 	optors.clear();
+	char lach = -1;
+	char ch = -1;
 	while(it != mexpr.end())
 	{
-		char ch = *it;
-		if((isdigit(ch)) || ch == '.' )
+		lach = ch;
+		ch = *it;
+		if((isdigit(ch)) || ch == '.' || 
+				(ch == '-' && (lach == -1 || lach == '(')))
 		{
 			if(!read_operand(it, mexpr.end(), operand))
 				return false;
