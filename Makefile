@@ -10,6 +10,6 @@ all : $(OBJS)
 install:
 	cp $(LIBMISC) /usr/local/lib
 	cp eval.h /usr/local/include
-		      
+	cp libeval.3 /usr/local/man/man3		      
 clean :
 	rm -v $(LIBMISC) $(OBJS) 

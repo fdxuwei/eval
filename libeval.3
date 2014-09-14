@@ -1,0 +1,29 @@
+.TH eval 3 14-September-2014
+.SH NAME
+eval \- math expression evaluator
+.SH SYNOPSIS
+.nf
+.ft B
+#include <eval.h>
+.ft
+.fi
+.LP
+.nf
+.ft B
+bool  eval (const std::string &expr, double *value);
+.SH DESCRIPTION
+.nf
+.ft B
+evaluate math expression in character string format. for example, "3.8+5.4*12.23+sqrt(4.5)+sin(7.8)*(-1)". 
+.nf
+.ft B
+support for:
+.nf
+.ft B
+1. operations: + - * / % ^
+.nf
+.ft B
+2. math functions: sqrt(double), pow(double,double), lg(double), ln(double), sin(double), cos(double) .
+.SH USAGE
+Link your program with the library
+.B libeval.a .
